@@ -50,6 +50,7 @@ internal class EnemyTurn : State
 
         if (isDead == true)
         {
+            battleSystem.SetState(new Lost(battleSystem));
             // switch (target)
             // {
             //     case 1:

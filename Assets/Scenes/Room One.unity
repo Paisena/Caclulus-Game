@@ -4434,6 +4434,7 @@ MonoBehaviour:
   FadeInOutAnimator: {fileID: 1906491050}
   infoSaver: {fileID: 760640101}
   dialogueList: []
+  hero: {fileID: 1920657338}
 --- !u!50 &662903527
 Rigidbody2D:
   serializedVersion: 4

@@ -36,7 +36,7 @@ internal class Won : State
         yield return new WaitForSeconds(1f);
 
         PlayerController.returnToPreviousSpot = true;
-        
+        Object.Destroy(GameObject.FindWithTag("Hero").GetComponent<Hero>().enemyFighting);
         battleSystem.levelChanger.ReturnToLastScene();
     }
 }
