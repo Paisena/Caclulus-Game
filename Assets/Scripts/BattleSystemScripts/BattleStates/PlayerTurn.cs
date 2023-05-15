@@ -14,8 +14,8 @@ public class PlayerTurn : State
     {
         if (battleSystem.playerUnit.currentHp <= 0)
         {
-            battleSystem.SetState(new Player2Turn(battleSystem));
-            yield break;
+        //    battleSystem.SetState(new Player2Turn(battleSystem));
+          //  yield break;
         }
 
         battleSystem.text.text = $"{battleSystem.playerUnit.name}'s turn";
@@ -45,7 +45,7 @@ public class PlayerTurn : State
         else
         {
             moveCommited = false;
-            battleSystem.SetState(new Player2Turn(battleSystem));
+            battleSystem.SetState(new EnemyTurn(battleSystem));
         }
 
         

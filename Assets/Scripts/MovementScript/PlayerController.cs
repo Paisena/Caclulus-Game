@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
     private bool isMenuOpened = false;
     public static bool returnToPreviousSpot = true;
     public GameObject[] dialogueList;
+    public Hero hero;
     
 
     #endregion
@@ -172,6 +173,8 @@ public class PlayerController : MonoBehaviour
         if (InteractWithEnemy())
         {
             //start combat
+            hero.enemyFighting = GameObject.FindWithTag("Enemy");
+            DontDestroyOnLoad(hero.enemyFighting);
             FadeInOutAnimator.SetBool("FadeOut", true);
         }
     }

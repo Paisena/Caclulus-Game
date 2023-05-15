@@ -19,6 +19,19 @@ public class Unit : MonoBehaviour
     public EquipedItems equipedItems;
     public bool isAlive = true;
     System.Random rnd = new System.Random();
+    private GameObject _enemyFighting;
+    public GameObject enemyFighting
+    {
+        get
+        {
+            return _enemyFighting;
+        }
+        set
+        {
+            _enemyFighting = value;
+        }
+    }
+    
 
     private void Awake() {
         
@@ -99,68 +112,64 @@ public class Unit : MonoBehaviour
         }
         
     }
-    public int chooseTarget()
-    {
-        int target;
+    // public int chooseTarget()
+    // {
+    //     int target;
 
-        bool hasAttacked = false;
+    //     bool hasAttacked = false;
 
-        System.Random rnd = new System.Random();
+    //     System.Random rnd = new System.Random();
 
-        GameObject heroGo = GameObject.FindWithTag("Hero");
-        GameObject mageGo = GameObject.FindWithTag("Mage");
-        GameObject archerGO = GameObject.FindWithTag("Archer");
+    //     GameObject heroGo = GameObject.FindWithTag("Hero");
 
-        Hero hero = heroGo.GetComponent<Hero>();
-        Archer archer = archerGO.GetComponent<Archer>();
-        Mage mage = mageGo.GetComponent<Mage>();
+    //     Hero hero = heroGo.GetComponent<Hero>();
 
-        while(!hasAttacked)
-        {
-            target = rnd.Next(1,3);
+    //     while(!hasAttacked)
+    //     {
+    //         target = rnd.Next(1,3);
 
-            switch (target)
-            {
-                case 1:
-                    if(!hero.isAlive)
-                    {
-                        Debug.Log("hero is dead");
-                    }
-                    else
-                    {
-                        Debug.Log("attacking hero");
-                        return target;
-                    }
-                    break;
+    //         switch (target)
+    //         {
+    //             case 1:
+    //                 if(!hero.isAlive)
+    //                 {
+    //                     Debug.Log("hero is dead");
+    //                 }
+    //                 else
+    //                 {
+    //                     Debug.Log("attacking hero");
+    //                     return target;
+    //                 }
+    //                 break;
 
-                case 2:
-                if(!archer.isAlive)
-                    {
-                        Debug.Log("archer is dead");
-                    }
-                    else
-                    {
-                        Debug.Log("attacking archer");
-                        return target;
-                    }
-                    break;
+    //             case 2:
+    //             if(!archer.isAlive)
+    //                 {
+    //                     Debug.Log("archer is dead");
+    //                 }
+    //                 else
+    //                 {
+    //                     Debug.Log("attacking archer");
+    //                     return target;
+    //                 }
+    //                 break;
 
-                case 3:
-                if(!mage.isAlive)
-                    {
-                        Debug.Log("mage is dead");
-                    }
-                    else
-                    {
-                        Debug.Log("attacking mage");
-                        return target;
-                    }
-                    break;
+    //             case 3:
+    //             if(!mage.isAlive)
+    //                 {
+    //                     Debug.Log("mage is dead");
+    //                 }
+    //                 else
+    //                 {
+    //                     Debug.Log("attacking mage");
+    //                     return target;
+    //                 }
+    //                 break;
 
-                default:
-                break;
-            }
-        }
-        return 1;
-    }
+    //             default:
+    //             break;
+    //         }
+    //     }
+    //     return 1;
+    // }
 }

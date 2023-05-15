@@ -35,7 +35,7 @@ public class BattleSystem : StateMachine
     [SerializeField]
     HUDTextMananger playerHUD;
     [SerializeField]
-    HUDTextMananger player2HUD;
+    HUDTextMananger player2HUD; 
     [SerializeField]
     HUDTextMananger player3HUD;
     [SerializeField]
@@ -53,24 +53,16 @@ public class BattleSystem : StateMachine
     IEnumerator SetupBattle()
     {
         GameObject playerGo = Instantiate(playerPrefab, playerTransform);
-        GameObject player2Go = Instantiate(player2Prefab, playerTransform);
-        GameObject player3Go = Instantiate(player3Prefab, playerTransform);
 
         GameObject HeroGO = GameObject.FindWithTag("Hero");
-        GameObject ArcherGo = GameObject.FindWithTag("Archer");
-        GameObject MageGO = GameObject.FindWithTag("Mage");
 
         playerUnit = HeroGO.GetComponent<Unit>();
-        player2Unit = ArcherGo.GetComponent<Unit>();
-        player3Unit = MageGO.GetComponent<Unit>();
 
-        GameObject enemyGO = Instantiate(enemyPrefab, enemyTransform);
-        enemyUnit = enemyGO.GetComponent<Unit>();
+        GameObject enemyGO = Instantiate(playerUnit.enemyFighting, enemyTransform);
+        enemyUnit = playerUnit.enemyFighting.GetComponent<Unit>();
 
 
         playerHUD.SetHUD(playerUnit,playerSlider);
-        player2HUD.SetHUD(player2Unit,player2Slider);
-        player3HUD.SetHUD(player3Unit,player3Slider);
         enemyHUD.SetHUD(enemyUnit,enemySlider);
 
         yield return new WaitForSeconds(0f);
