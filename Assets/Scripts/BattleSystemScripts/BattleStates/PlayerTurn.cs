@@ -12,6 +12,7 @@ public class PlayerTurn : State
 
     public override IEnumerator Start()
     {
+        battleSystem.button1.interactable = true;
         if (battleSystem.playerUnit.currentHp <= 0)
         {
         //    battleSystem.SetState(new Player2Turn(battleSystem));

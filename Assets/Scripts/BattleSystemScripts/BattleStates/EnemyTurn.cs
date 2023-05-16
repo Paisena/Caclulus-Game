@@ -11,6 +11,7 @@ internal class EnemyTurn : State
 
     public override IEnumerator Start()
     {
+        battleSystem.button1.interactable = false;
         Debug.Log("enemy turn");
         battleSystem.text.text = "Enemy Turn";
 
@@ -23,51 +24,12 @@ internal class EnemyTurn : State
 
         isDead = battleSystem.playerUnit.TakeDamage(battleSystem.enemyUnit.damage,battleSystem.playerSlider);
         battleSystem.text.text = $"Hero takes {battleSystem.enemyUnit.damage} damage";
-        
-        // switch (target)
-        // {
-        //     case 1:
-                
-        //         break;
-            
-        //     case 2:
-        //         isDead = battleSystem.player2Unit.TakeDamage(battleSystem.enemyUnit.damage,battleSystem.player2Slider);
-        //         battleSystem.text.text = $"Archer takes {battleSystem.enemyUnit.damage} damage";
-        //         break;
-        //     case 3:
-        //         isDead = battleSystem.player3Unit.TakeDamage(battleSystem.enemyUnit.damage,battleSystem.player3Slider);
-        //         battleSystem.text.text = $"Mage take {battleSystem.enemyUnit.damage} damage";
-        //         break;
-
-        //     default:
-        //         isDead = battleSystem.playerUnit.TakeDamage(battleSystem.enemyUnit.damage,battleSystem.playerSlider);
-        //         battleSystem.text.text = $"Hero take {battleSystem.enemyUnit.damage} damage";
-        //     break;
-        // }
-        
 
         yield return new WaitForSeconds(1f);
 
         if (isDead == true)
         {
             battleSystem.SetState(new Lost(battleSystem));
-            // switch (target)
-            // {
-            //     case 1:
-            //         battleSystem.SetState(new Player1Dead(battleSystem));
-            //         break;
-            //     case 2:
-            //         battleSystem.SetState(new Player2Dead(battleSystem));
-            //         break;
-            //     case 3:
-            //         battleSystem.SetState(new Player3Dead(battleSystem));
-            //         break;
-
-            //     default:
-            //         battleSystem.SetState(new Lost(battleSystem));
-            //     break;
-            // }
-            
         }
         else
         {

@@ -71,7 +71,14 @@ public class BattleSystem : StateMachine
 
     public void OnAttackButton()
     {
-        StartCoroutine(state.Attack());
+        if(this.state is PlayerTurn)
+        {
+            StartCoroutine(state.Attack());
+        }
+        else
+        {
+            Debug.Log("not your turn");
+        }
     }
 
     public void OnHealButton(){
