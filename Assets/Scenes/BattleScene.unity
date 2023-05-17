@@ -2502,7 +2502,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 333, y: -579}
+  m_AnchoredPosition: {x: 333, y: -672}
   m_SizeDelta: {x: 696.26, y: 241.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1127231342
@@ -3280,7 +3280,14 @@ MonoBehaviour:
   enemySlider: {fileID: 623698701}
   text: {fileID: 1887616850}
   levelChanger: {fileID: 1265355134}
-  button1: {fileID: 1127231342}
+  button1: {fileID: 1651749366}
+  button2: {fileID: 2147324312}
+  button3: {fileID: 803625461}
+  button4: {fileID: 765061049}
+  button5: {fileID: 70954065}
+  button6: {fileID: 1363566670}
+  button7: {fileID: 1384697313}
+  button8: {fileID: 1624174459}
   playerHUD: {fileID: 1706183292}
   player2HUD: {fileID: 0}
   player3HUD: {fileID: 0}

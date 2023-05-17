@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+
 public class BattleSystem : StateMachine
 {
     public GameObject playerPrefab;
@@ -31,6 +32,13 @@ public class BattleSystem : StateMachine
     public LevelChanger levelChanger;
 
     public Button button1;
+    public Button button2;
+    public Button button3;
+    public Button button4;
+    public Button button5;
+    public Button button6;
+    public Button button7;
+    public Button button8;
 
     [SerializeField]
     HUDTextMananger playerHUD;
@@ -84,10 +92,9 @@ public class BattleSystem : StateMachine
     public void OnConcept1Button()
     {
         // Derivative
-        Debug.Log("Derivative");
         if (this.state is PlayerTurn)
         {
-            StartCoroutine(state.Attack());
+            StartCoroutine(state.Concept1());
         }
         else
         {
@@ -100,7 +107,7 @@ public class BattleSystem : StateMachine
         Debug.Log("Integral");
         if (this.state is PlayerTurn)
         {
-            StartCoroutine(state.Attack());
+            StartCoroutine(state.Concept2());
         }
         else
         {
@@ -113,7 +120,7 @@ public class BattleSystem : StateMachine
         Debug.Log("Limit");
         if (this.state is PlayerTurn)
         {
-            StartCoroutine(state.Attack());
+            StartCoroutine(state.Concept3());
         }
         else
         {
@@ -126,7 +133,7 @@ public class BattleSystem : StateMachine
         Debug.Log("Series");
         if (this.state is PlayerTurn)
         {
-            StartCoroutine(state.Attack());
+            StartCoroutine(state.Concept4());
         }
         else
         {
@@ -139,7 +146,7 @@ public class BattleSystem : StateMachine
         Debug.Log("Vectors");
         if (this.state is PlayerTurn)
         {
-            StartCoroutine(state.Attack());
+            StartCoroutine(state.Concept5());
         }
         else
         {
@@ -152,7 +159,7 @@ public class BattleSystem : StateMachine
         Debug.Log("Area");
         if (this.state is PlayerTurn)
         {
-            StartCoroutine(state.Attack());
+            StartCoroutine(state.Concept6());
         }
         else
         {
@@ -165,7 +172,7 @@ public class BattleSystem : StateMachine
         Debug.Log("Parametric");
         if (this.state is PlayerTurn)
         {
-            StartCoroutine(state.Attack());
+            StartCoroutine(state.Concept7());
         }
         else
         {

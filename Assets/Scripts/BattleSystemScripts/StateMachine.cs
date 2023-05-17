@@ -11,4 +11,12 @@ public abstract class StateMachine : MonoBehaviour
         state = newState;
         StartCoroutine(state.Start());
     }
+
+    protected Question question;
+
+    public void SetQuestion(Question newQuestion)
+    {
+        question = newQuestion;
+        question.Start();
+    }
 }

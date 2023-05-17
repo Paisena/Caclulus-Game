@@ -29,7 +29,6 @@ public class PlayerTurn : State
 
         if(!moveCommited)
         {
-            //Debug.Log(battleSystem.enemyUnit.TakeDamage(battleSystem.playerUnit.damage,battleSystem.enemySlider));
             isDead = battleSystem.enemyUnit.TakeDamage(battleSystem.playerUnit.damage,battleSystem.enemySlider);
             battleSystem.text.text = $"You attack for {battleSystem.playerUnit.damage} damage!";
             moveCommited = true;
@@ -50,6 +49,48 @@ public class PlayerTurn : State
         }
 
         
+    }
+
+    public override IEnumerator Concept1()
+    {
+        battleSystem.SetQuestion(new QuestionOne(battleSystem));
+        yield break;
+    }
+
+    public override IEnumerator Concept2()
+    {
+        Debug.Log("concept 2");
+        yield break;
+    }
+
+    public override IEnumerator Concept3()
+    {
+        Debug.Log("concept 3");
+        yield break;
+    }
+
+    public override IEnumerator Concept4()
+    {
+        Debug.Log("concept 4");
+        yield break;
+    }
+    
+    public override IEnumerator Concept5()
+    {
+        Debug.Log("concept 5");
+        yield break;
+    }
+
+    public override IEnumerator Concept6()
+    {
+        Debug.Log("concept 6");
+        yield break;
+    }
+    
+    public override IEnumerator Concept7()
+    {
+        Debug.Log("concept 7");
+        yield break;
     }
 
     public override IEnumerator Heal()
