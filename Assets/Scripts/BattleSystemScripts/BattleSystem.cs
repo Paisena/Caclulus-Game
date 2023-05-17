@@ -27,15 +27,15 @@ public class BattleSystem : StateMachine
 
     [SerializeField]
     public TextMeshPro text;
-    
+
     public LevelChanger levelChanger;
 
     public Button button1;
-    
+
     [SerializeField]
     HUDTextMananger playerHUD;
     [SerializeField]
-    HUDTextMananger player2HUD; 
+    HUDTextMananger player2HUD;
     [SerializeField]
     HUDTextMananger player3HUD;
     [SerializeField]
@@ -62,8 +62,8 @@ public class BattleSystem : StateMachine
         enemyUnit = playerUnit.enemyFighting.GetComponent<Unit>();
 
 
-        playerHUD.SetHUD(playerUnit,playerSlider);
-        enemyHUD.SetHUD(enemyUnit,enemySlider);
+        playerHUD.SetHUD(playerUnit, playerSlider);
+        enemyHUD.SetHUD(enemyUnit, enemySlider);
 
         yield return new WaitForSeconds(0f);
 
@@ -71,7 +71,7 @@ public class BattleSystem : StateMachine
 
     public void OnAttackButton()
     {
-        if(this.state is PlayerTurn)
+        if (this.state is PlayerTurn)
         {
             StartCoroutine(state.Attack());
         }
@@ -81,13 +81,107 @@ public class BattleSystem : StateMachine
         }
     }
 
-    public void OnHealButton(){
+    public void OnConcept1Button()
+    {
+        // Derivative
+        Debug.Log("Derivative");
+        if (this.state is PlayerTurn)
+        {
+            StartCoroutine(state.Attack());
+        }
+        else
+        {
+            Debug.Log("not your turn");
+        }
+    }
+    public void OnConcept2Button()
+    {
+        // Integral
+        Debug.Log("Integral");
+        if (this.state is PlayerTurn)
+        {
+            StartCoroutine(state.Attack());
+        }
+        else
+        {
+            Debug.Log("not your turn");
+        }
+    }
+    public void OnConcept3Button()
+    {
+        // Limit
+        Debug.Log("Limit");
+        if (this.state is PlayerTurn)
+        {
+            StartCoroutine(state.Attack());
+        }
+        else
+        {
+            Debug.Log("not your turn");
+        }
+    }
+    public void OnConcept4Button()
+    {
+        // Series
+        Debug.Log("Series");
+        if (this.state is PlayerTurn)
+        {
+            StartCoroutine(state.Attack());
+        }
+        else
+        {
+            Debug.Log("not your turn");
+        }
+    }
+    public void OnConcept5Button()
+    {
+        // Vectors
+        Debug.Log("Vectors");
+        if (this.state is PlayerTurn)
+        {
+            StartCoroutine(state.Attack());
+        }
+        else
+        {
+            Debug.Log("not your turn");
+        }
+    }
+    public void OnConcept6Button()
+    {
+        // Area
+        Debug.Log("Area");
+        if (this.state is PlayerTurn)
+        {
+            StartCoroutine(state.Attack());
+        }
+        else
+        {
+            Debug.Log("not your turn");
+        }
+    }
+    public void OnConcept7Button()
+    {
+        // Parametric
+        Debug.Log("Parametric");
+        if (this.state is PlayerTurn)
+        {
+            StartCoroutine(state.Attack());
+        }
+        else
+        {
+            Debug.Log("not your turn");
+        }
+    }
+
+
+    public void OnHealButton()
+    {
         StartCoroutine(state.Heal());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

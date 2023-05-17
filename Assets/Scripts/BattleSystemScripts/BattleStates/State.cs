@@ -20,6 +20,41 @@ public abstract class State
         yield break;
     }
 
+    public virtual IEnumerator Concept1()
+    {
+        yield break;
+    }
+
+    public virtual IEnumerator Concept2()
+    {
+        yield break;
+    }
+
+    public virtual IEnumerator Concept3()
+    {
+        yield break;
+    }
+
+    public virtual IEnumerator Concept4()
+    {
+        yield break;
+    }
+
+    public virtual IEnumerator Concept5()
+    {
+        yield break;
+    }
+
+    public virtual IEnumerator Concept6()
+    {
+        yield break;
+    }
+
+    public virtual IEnumerator Concept7()
+    {
+        yield break;
+    }
+
     public virtual IEnumerator Heal()
     {
         yield break;
