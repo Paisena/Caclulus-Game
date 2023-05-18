@@ -12,6 +12,14 @@ internal class EnemyTurn : State
     public override IEnumerator Start()
     {
         battleSystem.button1.interactable = false;
+        battleSystem.button2.interactable = false;
+        battleSystem.button3.interactable = false;
+        battleSystem.button4.interactable = false;
+        battleSystem.button5.interactable = false;
+        battleSystem.button6.interactable = false;
+        battleSystem.button7.interactable = false;
+        battleSystem.button8.interactable = false;
+
         Debug.Log("enemy turn");
         battleSystem.text.text = "Enemy Turn";
 

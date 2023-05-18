@@ -199,6 +199,7 @@ public class BattleSystem : StateMachine
         {
             if (this.state is PlayerTurn)
             {
+                SetupQuestions();
                 StartCoroutine(state.Attack());
             }
             else
@@ -230,6 +231,12 @@ public class BattleSystem : StateMachine
     {
         listOfAnswers.SetActive(true);
         listOfButton.SetActive(false);
+    }
+
+    public void SetupQuestions()
+    {
+        listOfAnswers.SetActive(false);
+        listOfButton.SetActive(true);
     }
 
     // Update is called once per frame
