@@ -16,6 +16,7 @@ TagManager:
   - Mage
   - ItemPrefab
   - Dialogue
+  - ChapterButton
   layers:
   - Default
   - TransparentFX

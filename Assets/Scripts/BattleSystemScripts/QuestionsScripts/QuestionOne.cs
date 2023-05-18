@@ -13,9 +13,7 @@ public class QuestionOne : Question
     {
         Debug.Log("started");
         battleSystem.text.text = "Find the Derivative of e<sup>3x</sup> yea";
-        battleSystem.button1.onClick.RemoveAllListeners();
-        battleSystem.button2.onClick.RemoveAllListeners();
+        battleSystem.SetupAnswers();
+        battleSystem.correctAnswer = 1;
     }
-
-    
 }

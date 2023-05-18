@@ -30,7 +30,8 @@ public class BattleSystem : StateMachine
     public TextMeshPro text;
 
     public LevelChanger levelChanger;
-
+    public int selectedAnswer = 0; 
+    public int correctAnswer = 0;
     public Button button1;
     public Button button2;
     public Button button3;
@@ -39,6 +40,11 @@ public class BattleSystem : StateMachine
     public Button button6;
     public Button button7;
     public Button button8;
+    public GameObject listOfButton;
+    public Button answer1Button;
+    public Button answer2Button;
+    public Button answer3Button;
+    public GameObject listOfAnswers;
 
     [SerializeField]
     HUDTextMananger playerHUD;
@@ -181,10 +187,49 @@ public class BattleSystem : StateMachine
         }
     }
 
-
     public void OnHealButton()
     {
         StartCoroutine(state.Heal());
+    }
+
+    public void Answer1Selected()
+    {
+        Debug.Log("answer 1 selected");
+        if(correctAnswer == 1)
+        {
+            if (this.state is PlayerTurn)
+            {
+                StartCoroutine(state.Attack());
+            }
+            else
+            {
+                Debug.Log("not your turn");
+            }
+        }
+    }
+
+    public void Answer2Selected()
+    {
+        Debug.Log("answer 2 selected");
+        if(selectedAnswer == correctAnswer)
+        {
+            
+        }
+    }
+
+    public void Answer3Selected()
+    {
+        Debug.Log("answer 3 selected");
+        if(selectedAnswer == correctAnswer)
+        {
+            
+        }
+    }
+
+    public void SetupAnswers()
+    {
+        listOfAnswers.SetActive(true);
+        listOfButton.SetActive(false);
     }
 
     // Update is called once per frame
