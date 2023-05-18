@@ -76,6 +76,7 @@ public class BattleSystem : StateMachine
         yield return new WaitForSeconds(0f);
 
     }
+    
 
     public void OnAttackButton()
     {
