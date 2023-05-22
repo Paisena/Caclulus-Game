@@ -36,6 +36,14 @@ public class PlayerTurn : State
         }
     }
 
+    public override IEnumerator WrongAnswer()
+    {
+        battleSystem.text.text = "Wrong Answer!";
+        yield return new WaitForSeconds(1f);
+
+        battleSystem.SetState(new EnemyTurn(battleSystem));
+    }
+
     public override IEnumerator Attack()
     {
         bool? isDead = false;

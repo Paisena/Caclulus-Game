@@ -225,6 +225,18 @@ public class BattleSystem : StateMachine
                 Debug.Log("not your turn");
             }
         }
+        else
+        {
+            if (this.state is PlayerTurn)
+            {
+                SetupQuestions();
+                StartCoroutine(state.WrongAnswer());
+            }
+            else
+            {
+                Debug.Log("not your turn");
+            }
+        }
     }
 
     public void Answer2Selected()
@@ -241,6 +253,18 @@ public class BattleSystem : StateMachine
                 Debug.Log("not your turn");
             }
         }
+        else
+        {
+            if (this.state is PlayerTurn)
+            {
+                SetupQuestions();
+                StartCoroutine(state.WrongAnswer());
+            }
+            else
+            {
+                Debug.Log("not your turn");
+            }
+        }
     }
 
     public void Answer3Selected()
@@ -251,6 +275,18 @@ public class BattleSystem : StateMachine
             {
                 SetupQuestions();
                 StartCoroutine(state.Attack());
+            }
+            else
+            {
+                Debug.Log("not your turn");
+            }
+        }
+        else
+        {
+            if (this.state is PlayerTurn)
+            {
+                SetupQuestions();
+                StartCoroutine(state.WrongAnswer());
             }
             else
             {

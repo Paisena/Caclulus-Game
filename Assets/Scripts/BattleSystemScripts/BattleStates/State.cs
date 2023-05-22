@@ -60,4 +60,9 @@ public abstract class State
         yield break;
     }
 
+    public virtual IEnumerator WrongAnswer()
+    {
+        yield break;
+    }
+
 }
