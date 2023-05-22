@@ -72,7 +72,6 @@ public class LevelChanger : MonoBehaviour
 
 
         int minIndex = Array.IndexOf(distances, distances.Min());
-        Debug.Log(minIndex);
         return levelChangeInfoList[minIndex];
     }
 

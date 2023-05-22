@@ -12,14 +12,8 @@ public class PlayerTurn : State
 
     public override IEnumerator Start()
     {
-        battleSystem.button1.interactable = true;
-        battleSystem.button2.interactable = true;
-        battleSystem.button3.interactable = true;
-        battleSystem.button4.interactable = true;
-        battleSystem.button5.interactable = true;
-        battleSystem.button6.interactable = true;
-        battleSystem.button7.interactable = true;
-        battleSystem.button8.interactable = true;
+
+        EnableConcepts();
 
         if (battleSystem.playerUnit.currentHp <= 0)
         {
@@ -29,6 +23,17 @@ public class PlayerTurn : State
 
         battleSystem.text.text = $"{battleSystem.playerUnit.name}'s turn";
         yield break;
+    }
+
+    private void EnableConcepts()
+    {
+        for (int i = 0; i < battleSystem.ConceptsActive.Length; i++)
+        {
+            if(battleSystem.ConceptsActive[i])
+            {
+                battleSystem.buttonArray[i].interactable = true;
+            }
+        }
     }
 
     public override IEnumerator Attack()
@@ -41,6 +46,7 @@ public class PlayerTurn : State
             battleSystem.text.text = $"You attack for {battleSystem.playerUnit.damage} damage!";
             moveCommited = true;
         }
+        battleSystem.UpdateQuestions();
 
         yield return new WaitForSeconds(1f);
 
@@ -136,97 +142,163 @@ public class PlayerTurn : State
         switch(concept)
         {
             case 1:
-                if((bool)battleSystem.concept1List[value] == true)
+                if(CheckIfEmpty(battleSystem.concept1List))
+                {
+                    Debug.Log("empty list");
+                    break;
+                }
+                if(battleSystem.concept1List[value] == false)
+                {
+                    return PickQuestion(concept);
+                }
+                if(battleSystem.concept1List[value] == true)
                 {
                     battleSystem.concept1List[value] = false;
+                    Debug.Log("Question found");
+                    if(CheckIfEmpty(battleSystem.concept1List))
+                    {
+                        battleSystem.ConceptsActive[0] = false;
+                    }
                     return value;
-                }
-                else
-                {
-                    PickQuestion(concept);
                 }
                 break;
             case 2:
-                if((bool)battleSystem.concept2List[value] == true)
+                if(CheckIfEmpty(battleSystem.concept2List))
+                {
+                    Debug.Log("empty list");
+                    break;
+                }
+                if(battleSystem.concept2List[value] == false)
+                {
+                    return PickQuestion(concept);
+                }
+                if(battleSystem.concept2List[value] == true)
                 {
                     battleSystem.concept2List[value] = false;
+                    Debug.Log("Question found");
                     return value;
-                }
-                else
-                {
-                    PickQuestion(concept);
                 }
                 break;
             case 3:
-                if((bool)battleSystem.concept3List[value] == true)
+                if(CheckIfEmpty(battleSystem.concept3List))
+                {
+                    Debug.Log("empty list");
+                    break;
+                }
+                if(battleSystem.concept3List[value] == false)
+                {
+                    return PickQuestion(concept);
+                }
+                if(battleSystem.concept3List[value] == true)
                 {
                     battleSystem.concept3List[value] = false;
+                    Debug.Log("Question found");
                     return value;
-                }
-                else
-                {
-                    PickQuestion(concept);
                 }
                 break;
             case 4:
-                if((bool)battleSystem.concept4List[value] == true)
+                if(CheckIfEmpty(battleSystem.concept4List))
+                {
+                    Debug.Log("empty list");
+                    break;
+                }
+                if(battleSystem.concept4List[value] == false)
+                {
+                    return PickQuestion(concept);
+                }
+                if(battleSystem.concept4List[value] == true)
                 {
                     battleSystem.concept4List[value] = false;
+                    Debug.Log("Question found");
                     return value;
-                }
-                else
-                {
-                    PickQuestion(concept);
                 }
                 break;
             case 5:
-                if((bool)battleSystem.concept5List[value] == true)
+                if(CheckIfEmpty(battleSystem.concept5List))
+                {
+                    Debug.Log("empty list");
+                    break;
+                }
+                if(battleSystem.concept5List[value] == false)
+                {
+                    return PickQuestion(concept);
+                }
+                if(battleSystem.concept5List[value] == true)
                 {
                     battleSystem.concept5List[value] = false;
+                    Debug.Log("Question found");
                     return value;
-                }
-                else
-                {
-                    PickQuestion(concept);
                 }
                 break;
             case 6:
-                if((bool)battleSystem.concept6List[value] == true)
+                if(CheckIfEmpty(battleSystem.concept6List))
+                {
+                    Debug.Log("empty list");
+                    break;
+                }
+                if(battleSystem.concept6List[value] == false)
+                {
+                    return PickQuestion(concept);
+                }
+                if(battleSystem.concept6List[value] == true)
                 {
                     battleSystem.concept6List[value] = false;
+                    Debug.Log("Question found");
                     return value;
-                }
-                else
-                {
-                    PickQuestion(concept);
                 }
                 break;
             case 7:
-                if((bool)battleSystem.concept7List[value] == true)
+                if(CheckIfEmpty(battleSystem.concept7List))
+                {
+                    Debug.Log("empty list");
+                    break;
+                }
+                if(battleSystem.concept7List[value] == false)
+                {
+                    return PickQuestion(concept);
+                }
+                if(battleSystem.concept7List[value] == true)
                 {
                     battleSystem.concept7List[value] = false;
+                    Debug.Log("Question found");
                     return value;
-                }
-                else
-                {
-                    PickQuestion(concept);
                 }
                 break;
             case 8:
-                if((bool)battleSystem.concept8List[value] == true)
+                if(CheckIfEmpty(battleSystem.concept8List))
+                {
+                    Debug.Log("empty list");
+                    break;
+                }
+                if(battleSystem.concept8List[value] == false)
+                {
+                    return PickQuestion(concept);
+                }
+                if(battleSystem.concept8List[value] == true)
                 {
                     battleSystem.concept8List[value] = false;
+                    Debug.Log("Question found");
                     return value;
-                }
-                else
-                {
-                    PickQuestion(concept);
                 }
                 break;
             default:
                 Debug.Log("randomized wrong number");
                 break;
         }
+        Debug.Log("No question");
         return -1;
+    }
+
+    public bool CheckIfEmpty(bool[] list)
+    {
+        for (int i = 0; i < list.Length; i++)
+        {
+            if(list[i] == true)
+            {
+                return false;
+            }
+        }
+        Debug.Log("list empty");
+        return true;
     }
 }

@@ -5912,7 +5912,7 @@ PrefabInstance:
     - target: {fileID: 559703301616033238, guid: 12260a5c163fdeb4db9acce641986f56,
         type: 3}
       propertyPath: damage
-      value: 21
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5505663031995078668, guid: 12260a5c163fdeb4db9acce641986f56,
         type: 3}
@@ -8926,7 +8926,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Hero
   unitLevel: 10
-  damage: 20
+  damage: 1
   baseDamage: 12
   baseMaxHP: 100
   mapHP: 100

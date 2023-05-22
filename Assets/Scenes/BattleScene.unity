@@ -4408,6 +4408,20 @@ MonoBehaviour:
   button6: {fileID: 1363566670}
   button7: {fileID: 1384697313}
   button8: {fileID: 1624174459}
+  buttonArray:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  buttonTextArray:
+  - {fileID: 2135377456}
+  - {fileID: 498825675}
+  - {fileID: 2121255591}
+  - {fileID: 1337960974}
+  - {fileID: 273182126}
+  - {fileID: 1049536526}
+  - {fileID: 1066387458}
+  - {fileID: 479812794}
   listOfButton: {fileID: 429244200}
   answer1Button: {fileID: 472193484}
   answer1Text: {fileID: 687709956}
@@ -4423,6 +4437,15 @@ MonoBehaviour:
   enemyHUDBox: {fileID: 1897934614}
   QuestionImageBox: {fileID: 2076811478}
   QuestionImage: {fileID: 0}
+  concept1List: 0101010101
+  concept2List: 0101010101
+  concept3List: 0101010101
+  concept4List: 0101010101
+  concept5List: 0101010101
+  concept6List: 0101010101
+  concept7List: 0101010101
+  concept8List: 0101010101
+  ConceptsActive: 0101010101010101
 --- !u!4 &1594207857
 Transform:
   m_ObjectHideFlags: 0

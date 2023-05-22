@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.IO;
+using System;
 
 public class BattleSystem : StateMachine
 {
@@ -40,6 +41,8 @@ public class BattleSystem : StateMachine
     public Button button6;
     public Button button7;
     public Button button8;
+    public Button[] buttonArray;
+    public TextMeshProUGUI[] buttonTextArray;
     public GameObject listOfButton;
     public Button answer1Button;
     public TextMeshProUGUI answer1Text;
@@ -68,11 +71,13 @@ public class BattleSystem : StateMachine
     public bool[] concept6List = {true, true, true, true, true};
     public bool[] concept7List = {true, true, true, true, true};
     public bool[] concept8List = {true, true, true, true, true};
+    public bool[] ConceptsActive = {true, true, true, true, true, true, true, true};
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(SetupBattle());
         QuestionImage = QuestionImageBox.GetComponent<Image>();
+        buttonArray = new Button[] {button1, button2, button3, button4, button5, button6, button7, button8};
         SetState(new Begin(this));
 
     }
@@ -92,7 +97,7 @@ public class BattleSystem : StateMachine
 
         playerHUD.SetHUD(playerUnit, playerSlider);
         enemyHUD.SetHUD(enemyUnit, enemySlider);
-
+        UpdateQuestions();
         yield return new WaitForSeconds(0f);
 
     }
@@ -292,5 +297,100 @@ public class BattleSystem : StateMachine
         image.name = "Sword of Epic";
 
         return image;
+    }
+
+    public void UpdateQuestions()
+    {
+        buttonTextArray[0].text = "Derivative " + GetAmountOfQuestions(1) + "/5";
+        buttonTextArray[1].text = "Integral " + GetAmountOfQuestions(2) + "/5";
+        buttonTextArray[2].text = "Limit " + GetAmountOfQuestions(3) + "/5";
+        buttonTextArray[3].text = "Series " + GetAmountOfQuestions(4) + "/5";
+        buttonTextArray[4].text = "Vectors " + GetAmountOfQuestions(5) + "/5";
+        buttonTextArray[5].text = "Area " + GetAmountOfQuestions(6) + "/5";
+        buttonTextArray[6].text = "Parametric " + GetAmountOfQuestions(7) + "/5";
+        buttonTextArray[7].text = "Heal " + GetAmountOfQuestions(8) + "/5";
+    }
+
+    public int GetAmountOfQuestions(int concept)
+    {
+        int amount = 0;
+        switch (concept)
+        {
+            case 1:
+                for (int i = 0; i < concept1List.Length; i++)
+                {
+                    if(concept1List[i])
+                    {
+                        amount++;
+                    }
+                }
+                break;
+            case 2:
+                for (int i = 0; i < concept2List.Length; i++)
+                {
+                    if(concept2List[i])
+                    {
+                        amount++;
+                    }
+                }
+                break;
+            case 3:
+                for (int i = 0; i < concept3List.Length; i++)
+                {
+                    if(concept3List[i])
+                    {
+                        amount++;
+                    }
+                }
+                break;
+            case 4:
+                for (int i = 0; i < concept4List.Length; i++)
+                {
+                    if(concept4List[i])
+                    {
+                        amount++;
+                    }
+                }
+                break;
+            case 5:
+                for (int i = 0; i < concept5List.Length; i++)
+                {
+                    if(concept5List[i])
+                    {
+                        amount++;
+                    }
+                }
+                break;
+            case 6:
+                for (int i = 0; i < concept6List.Length; i++)
+                {
+                    if(concept6List[i])
+                    {
+                        amount++;
+                    }
+                }
+                break;
+            case 7:
+                for (int i = 0; i < concept7List.Length; i++)
+                {
+                    if(concept7List[i])
+                    {
+                        amount++;
+                    }
+                }
+                break;
+            case 8:
+                for (int i = 0; i < concept8List.Length; i++)
+                {
+                    if(concept8List[i])
+                    {
+                        amount++;
+                    }
+                }
+                break;
+            default:
+            break;
+        }
+        return amount;
     }
 }
