@@ -12,14 +12,8 @@ public class SwordOfEpic : Weapon
     }
     public SwordOfEpic()
     {
-        byte[] fileData;
 
-        string filePath = "Assets/sword.png";
-        fileData = File.ReadAllBytes(filePath);
-        Texture2D tex = new Texture2D(1, 1);
-        tex.LoadImage(fileData);
-        itemImage = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f));
-        itemImage.name = "Sword of Epic";
+        itemImage = CreateSprite("Assets/sword.png");
 
         itemName = "Sword Of Epic";
         itemRarity = Rarity.Epic;
@@ -27,5 +21,17 @@ public class SwordOfEpic : Weapon
         itemPhysicalDamage = 10;
         itemMagicDamage = 0;
         itemMana = 0;
+    }
+    public Sprite CreateSprite(string filePath)
+    {
+        byte[] fileData;
+
+        fileData = File.ReadAllBytes(filePath);
+        Texture2D tex = new Texture2D(1, 1);
+        tex.LoadImage(fileData);
+        Sprite image = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f));
+        image.name = "Sword of Epic";
+
+        return image;
     }
 }

@@ -20,7 +20,6 @@ internal class EnemyTurn : State
         battleSystem.button7.interactable = false;
         battleSystem.button8.interactable = false;
 
-        Debug.Log("enemy turn");
         battleSystem.text.text = "Enemy Turn";
 
         yield return new WaitForSeconds(1f);

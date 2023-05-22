@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using System.IO;
 
 public class BattleSystem : StateMachine
 {
@@ -42,8 +42,11 @@ public class BattleSystem : StateMachine
     public Button button8;
     public GameObject listOfButton;
     public Button answer1Button;
+    public TextMeshProUGUI answer1Text;
     public Button answer2Button;
+    public TextMeshProUGUI answer2Text;
     public Button answer3Button;
+    public TextMeshProUGUI answer3Text;
     public GameObject listOfAnswers;
 
     [SerializeField]
@@ -54,11 +57,22 @@ public class BattleSystem : StateMachine
     HUDTextMananger player3HUD;
     [SerializeField]
     HUDTextMananger enemyHUD;
-
+    public GameObject enemyHUDBox;
+    public GameObject QuestionImageBox;
+    public Image QuestionImage;
+    public bool[] concept1List = {true, true, true, true, true};
+    public bool[] concept2List = {true, true, true, true, true};
+    public bool[] concept3List = {true, true, true, true, true};
+    public bool[] concept4List = {true, true, true, true, true};
+    public bool[] concept5List = {true, true, true, true, true};
+    public bool[] concept6List = {true, true, true, true, true};
+    public bool[] concept7List = {true, true, true, true, true};
+    public bool[] concept8List = {true, true, true, true, true};
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(SetupBattle());
+        QuestionImage = QuestionImageBox.GetComponent<Image>();
         SetState(new Begin(this));
 
     }
@@ -194,7 +208,6 @@ public class BattleSystem : StateMachine
 
     public void Answer1Selected()
     {
-        Debug.Log("answer 1 selected");
         if(correctAnswer == 1)
         {
             if (this.state is PlayerTurn)
@@ -211,19 +224,33 @@ public class BattleSystem : StateMachine
 
     public void Answer2Selected()
     {
-        Debug.Log("answer 2 selected");
-        if(selectedAnswer == correctAnswer)
+        if(correctAnswer == 2)
         {
-            
+            if (this.state is PlayerTurn)
+            {
+                SetupQuestions();
+                StartCoroutine(state.Attack());
+            }
+            else
+            {
+                Debug.Log("not your turn");
+            }
         }
     }
 
     public void Answer3Selected()
     {
-        Debug.Log("answer 3 selected");
-        if(selectedAnswer == correctAnswer)
+        if(correctAnswer == 3)
         {
-            
+            if (this.state is PlayerTurn)
+            {
+                SetupQuestions();
+                StartCoroutine(state.Attack());
+            }
+            else
+            {
+                Debug.Log("not your turn");
+            }
         }
     }
 
@@ -235,13 +262,35 @@ public class BattleSystem : StateMachine
 
     public void SetupQuestions()
     {
+        QuestionImageBox.SetActive(false);
         listOfAnswers.SetActive(false);
         listOfButton.SetActive(true);
+        enemyHUDBox.SetActive(true);
+        text.fontSize = 2.46f;
+    }
+
+    public void SetupImage()
+    {
+        QuestionImageBox.SetActive(true);
+        enemyHUDBox.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    public Sprite CreateSprite(string filePath)
+    {
+        byte[] fileData;
+
+        fileData = File.ReadAllBytes(filePath);
+        Texture2D tex = new Texture2D(1, 1);
+        tex.LoadImage(fileData);
+        Sprite image = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f));
+        image.name = "Sword of Epic";
+
+        return image;
     }
 }

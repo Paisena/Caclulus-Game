@@ -100,7 +100,6 @@ public class Unit : MonoBehaviour
         
         currentHp -= dmg;
         slider.value = currentHp;
-        Debug.Log($"health: {currentHp}");
         if (currentHp <= 0)
         {
             isAlive = false;
