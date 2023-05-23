@@ -16,6 +16,6 @@ public class Question19 : Question
         battleSystem.correctAnswer = 3;
         battleSystem.answer1Text.text = "y = lnx - 2 + C";
         battleSystem.answer2Text.text = "y = Ce<sup>x + 2</sup>";
-        battleSystem.answer3Text.text = "x - 2 + C";
+        battleSystem.answer3Text.text = "C|x| - 2";
     }
 }
