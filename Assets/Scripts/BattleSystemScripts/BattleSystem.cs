@@ -220,6 +220,7 @@ public class BattleSystem : StateMachine
             if (this.state is PlayerTurn)
             {
                 SetupQuestions();
+                DisableAll();
                 StartCoroutine(state.Attack());
             }
             else
@@ -232,6 +233,7 @@ public class BattleSystem : StateMachine
             if (this.state is PlayerTurn)
             {
                 SetupQuestions();
+                DisableAll();
                 StartCoroutine(state.WrongAnswer());
             }
             else
@@ -248,6 +250,7 @@ public class BattleSystem : StateMachine
             if (this.state is PlayerTurn)
             {
                 SetupQuestions();
+                DisableAll();
                 StartCoroutine(state.Attack());
             }
             else
@@ -260,6 +263,7 @@ public class BattleSystem : StateMachine
             if (this.state is PlayerTurn)
             {
                 SetupQuestions();
+                DisableAll();
                 StartCoroutine(state.WrongAnswer());
             }
             else
@@ -276,6 +280,7 @@ public class BattleSystem : StateMachine
             if (this.state is PlayerTurn)
             {
                 SetupQuestions();
+                DisableAll();
                 StartCoroutine(state.Attack());
             }
             else
@@ -288,6 +293,7 @@ public class BattleSystem : StateMachine
             if (this.state is PlayerTurn)
             {
                 SetupQuestions();
+                DisableAll();
                 StartCoroutine(state.WrongAnswer());
             }
             else
@@ -430,5 +436,17 @@ public class BattleSystem : StateMachine
             break;
         }
         return amount;
+    }
+
+    public void DisableAll()
+    {
+        button1.interactable = false;
+        button2.interactable = false;
+        button3.interactable = false;
+        button4.interactable = false;
+        button5.interactable = false;
+        button6.interactable = false;
+        button7.interactable = false;
+        button8.interactable = false;
     }
 }

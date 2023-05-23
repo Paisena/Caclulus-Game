@@ -32,11 +32,21 @@ internal class Won : State
         int selectedDrop = (int)Random.Range(0, dropTable.Count);
 
         playerInventory.CreateEquipableItem(dropTable[selectedDrop]);
+        Object.Destroy(enemy);
 
         yield return new WaitForSeconds(1f);
 
         PlayerController.returnToPreviousSpot = true;
-        Object.Destroy(GameObject.FindWithTag("Hero").GetComponent<Hero>().enemyFighting);
+
+        battleSystem.text.text = "Thanks for playing!";
+
+        yield return new WaitForSeconds(2f);
+
+        battleSystem.text.text = "quitting";
+
+        yield return new WaitForSeconds(2f);
+
+        Application.Quit();
         battleSystem.levelChanger.ReturnToLastScene();
     }
 }

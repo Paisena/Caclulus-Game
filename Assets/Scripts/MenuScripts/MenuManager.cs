@@ -150,6 +150,7 @@ public class MenuManager : MonoBehaviour
         //     OnMenuOpened();
         // }
         // count++;
+        Application.Quit();
     }
 
     private void OpenTheMenu()
