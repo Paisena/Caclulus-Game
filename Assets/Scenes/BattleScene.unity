@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 70954066}
   - component: {fileID: 70954065}
   m_Layer: 5
-  m_Name: Vectors
+  m_Name: Fundamental Theorem of Caculus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -705,7 +705,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Vectors
+  m_text: Fundamental Theorem of Caculus
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2310,7 +2310,7 @@ GameObject:
   - component: {fileID: 765061050}
   - component: {fileID: 765061049}
   m_Layer: 5
-  m_Name: Series
+  m_Name: Separation of Variables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3869,7 +3869,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Series
+  m_text: Separation of Variables
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

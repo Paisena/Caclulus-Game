@@ -18,6 +18,9 @@ public class Question13 : Question
         Sprite graphSprite = battleSystem.CreateSprite("Assets/Scripts/BattleSystemScripts/QuestionsScripts/Graphs/Graph1.PNG");
 
         battleSystem.QuestionImage.sprite = graphSprite;
-        battleSystem.correctAnswer = 1;
+        battleSystem.correctAnswer = 2;
+        battleSystem.answer1Text.text = "0";
+        battleSystem.answer2Text.text = "6";
+        battleSystem.answer3Text.text = "DNE";
     }
 }

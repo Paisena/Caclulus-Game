@@ -72,6 +72,7 @@ public class BattleSystem : StateMachine
     public bool[] concept7List = {true, true, true, true, true};
     public bool[] concept8List = {true, true, true, true, true};
     public bool[] ConceptsActive = {true, true, true, true, true, true, true, true};
+    public (int,int) selectedQuestion = (-1,-1);
     // Start is called before the first frame update
     void Start()
     {
@@ -340,8 +341,8 @@ public class BattleSystem : StateMachine
         buttonTextArray[0].text = "Derivative " + GetAmountOfQuestions(1) + "/5";
         buttonTextArray[1].text = "Integral " + GetAmountOfQuestions(2) + "/5";
         buttonTextArray[2].text = "Limit " + GetAmountOfQuestions(3) + "/5";
-        buttonTextArray[3].text = "Series " + GetAmountOfQuestions(4) + "/5";
-        buttonTextArray[4].text = "Vectors " + GetAmountOfQuestions(5) + "/5";
+        buttonTextArray[3].text = "Separation of Variables " + GetAmountOfQuestions(4) + "/5";
+        buttonTextArray[4].text = "Fundamental Theorem of Calculus " + GetAmountOfQuestions(5) + "/5";
         buttonTextArray[5].text = "Area " + GetAmountOfQuestions(6) + "/5";
         buttonTextArray[6].text = "Parametric " + GetAmountOfQuestions(7) + "/5";
         buttonTextArray[7].text = "Heal " + GetAmountOfQuestions(8) + "/5";

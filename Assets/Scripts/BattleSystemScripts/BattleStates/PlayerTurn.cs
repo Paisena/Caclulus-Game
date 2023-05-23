@@ -39,6 +39,35 @@ public class PlayerTurn : State
     public override IEnumerator WrongAnswer()
     {
         battleSystem.text.text = "Wrong Answer!";
+        switch (battleSystem.selectedQuestion.Item1)
+        {
+            case 1:
+                battleSystem.concept1List[battleSystem.selectedQuestion.Item2] = true;
+                break;
+            case 2:
+                battleSystem.concept2List[battleSystem.selectedQuestion.Item2] = true;
+                break;
+            case 3:
+                battleSystem.concept3List[battleSystem.selectedQuestion.Item2] = true;
+                break;
+            case 4:
+                battleSystem.concept4List[battleSystem.selectedQuestion.Item2] = true;
+                break;
+            case 5:
+                battleSystem.concept5List[battleSystem.selectedQuestion.Item2] = true;
+                break;
+            case 6:
+                battleSystem.concept6List[battleSystem.selectedQuestion.Item2] = true;
+                break;
+            case 7:
+                battleSystem.concept7List[battleSystem.selectedQuestion.Item2] = true;
+                break;
+            case 8:
+                battleSystem.concept8List[battleSystem.selectedQuestion.Item2] = true;
+                break;
+            default:
+                break;
+        }
         yield return new WaitForSeconds(1f);
 
         battleSystem.SetState(new EnemyTurn(battleSystem));
@@ -89,7 +118,7 @@ public class PlayerTurn : State
                 battleSystem.SetQuestion(new Question4(battleSystem));
                 break;
             case 4:
-                battleSystem.SetQuestion(new Question4(battleSystem));
+                battleSystem.SetQuestion(new Question5(battleSystem));
                 break;
             default:
                 break;
@@ -99,26 +128,105 @@ public class PlayerTurn : State
 
     public override IEnumerator Concept2()
     {
-        Debug.Log("concept 2");
+        int question = PickQuestion(2);
+        switch(question)
+        {
+            case 0:
+                battleSystem.SetQuestion(new Question6(battleSystem));
+                break;
+            case 1:
+                battleSystem.SetQuestion(new Question7(battleSystem));
+                break;
+            case 2:
+                battleSystem.SetQuestion(new Question8(battleSystem));
+                break;
+            case 3:
+                battleSystem.SetQuestion(new Question9(battleSystem));
+                break;
+            case 4:
+                battleSystem.SetQuestion(new Question10(battleSystem));
+                break;
+            default:
+                break;
+        }
         yield break;
     }
 
     public override IEnumerator Concept3()
     {
-        Debug.Log("concept 3");
-        battleSystem.SetQuestion(new Question13(battleSystem));
+        int question = PickQuestion(3);
+        switch(question)
+        {
+            case 0:
+                battleSystem.SetQuestion(new Question11(battleSystem));
+                break;
+            case 1:
+                battleSystem.SetQuestion(new Question12(battleSystem));
+                break;
+            case 2:
+                battleSystem.SetQuestion(new Question13(battleSystem));
+                break;
+            case 3:
+                battleSystem.SetQuestion(new Question14(battleSystem));
+                break;
+            case 4:
+                battleSystem.SetQuestion(new Question15(battleSystem));
+                break;
+            default:
+                break;
+        }
         yield break;
     }
 
     public override IEnumerator Concept4()
     {
-        Debug.Log("concept 4");
+        int question = PickQuestion(4);
+        switch(question)
+        {
+            case 0:
+                battleSystem.SetQuestion(new Question16(battleSystem));
+                break;
+            case 1:
+                battleSystem.SetQuestion(new Question17(battleSystem));
+                break;
+            case 2:
+                battleSystem.SetQuestion(new Question18(battleSystem));
+                break;
+            case 3:
+                battleSystem.SetQuestion(new Question19(battleSystem));
+                break;
+            case 4:
+                battleSystem.SetQuestion(new Question20(battleSystem));
+                break;
+            default:
+                break;
+        }
         yield break;
     }
     
     public override IEnumerator Concept5()
     {
-        Debug.Log("concept 5");
+        int question = PickQuestion(5);
+        switch(question)
+        {
+            case 0:
+                battleSystem.SetQuestion(new Question21(battleSystem));
+                break;
+            case 1:
+                battleSystem.SetQuestion(new Question22(battleSystem));
+                break;
+            case 2:
+                battleSystem.SetQuestion(new Question23(battleSystem));
+                break;
+            case 3:
+                battleSystem.SetQuestion(new Question23(battleSystem));
+                break;
+            case 4:
+                battleSystem.SetQuestion(new Question20(battleSystem));
+                break;
+            default:
+                break;
+        }
         yield break;
     }
 
@@ -146,6 +254,8 @@ public class PlayerTurn : State
     public int PickQuestion(int concept)
     {
         int value = Random.Range(0,5);
+        battleSystem.selectedQuestion.Item1 = concept;
+        battleSystem.selectedQuestion.Item2 = value;
         Debug.Log("Question: " + value);
         switch(concept)
         {
@@ -184,6 +294,10 @@ public class PlayerTurn : State
                 {
                     battleSystem.concept2List[value] = false;
                     Debug.Log("Question found");
+                    if(CheckIfEmpty(battleSystem.concept2List))
+                    {
+                        battleSystem.ConceptsActive[1] = false;
+                    }
                     return value;
                 }
                 break;
@@ -201,6 +315,10 @@ public class PlayerTurn : State
                 {
                     battleSystem.concept3List[value] = false;
                     Debug.Log("Question found");
+                    if(CheckIfEmpty(battleSystem.concept3List))
+                    {
+                        battleSystem.ConceptsActive[2] = false;
+                    }
                     return value;
                 }
                 break;
@@ -218,6 +336,10 @@ public class PlayerTurn : State
                 {
                     battleSystem.concept4List[value] = false;
                     Debug.Log("Question found");
+                    if(CheckIfEmpty(battleSystem.concept4List))
+                    {
+                        battleSystem.ConceptsActive[3] = false;
+                    }
                     return value;
                 }
                 break;
@@ -235,6 +357,10 @@ public class PlayerTurn : State
                 {
                     battleSystem.concept5List[value] = false;
                     Debug.Log("Question found");
+                    if(CheckIfEmpty(battleSystem.concept5List))
+                    {
+                        battleSystem.ConceptsActive[4] = false;
+                    }
                     return value;
                 }
                 break;
@@ -252,6 +378,10 @@ public class PlayerTurn : State
                 {
                     battleSystem.concept6List[value] = false;
                     Debug.Log("Question found");
+                    if(CheckIfEmpty(battleSystem.concept6List))
+                    {
+                        battleSystem.ConceptsActive[5] = false;
+                    }
                     return value;
                 }
                 break;
@@ -269,6 +399,10 @@ public class PlayerTurn : State
                 {
                     battleSystem.concept7List[value] = false;
                     Debug.Log("Question found");
+                    if(CheckIfEmpty(battleSystem.concept7List))
+                    {
+                        battleSystem.ConceptsActive[6] = false;
+                    }
                     return value;
                 }
                 break;
@@ -286,6 +420,10 @@ public class PlayerTurn : State
                 {
                     battleSystem.concept8List[value] = false;
                     Debug.Log("Question found");
+                    if(CheckIfEmpty(battleSystem.concept8List))
+                    {
+                        battleSystem.ConceptsActive[7] = false;
+                    }
                     return value;
                 }
                 break;

@@ -8,7 +8,6 @@ public class Question2 : Question
     public Question2(BattleSystem battleSystem) : base(battleSystem)
     {
     }
-
     public override void Start()
     {
         battleSystem.text.text = "Find the Derivative of f(f(x) * h(x))";
