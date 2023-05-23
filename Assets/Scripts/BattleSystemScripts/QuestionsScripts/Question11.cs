@@ -16,7 +16,7 @@ public class Question11 : Question
         battleSystem.SetupAnswers();
         battleSystem.correctAnswer = 3;
         battleSystem.answer1Text.text = "When the limit exists";
-        battleSystem.answer2Text.text = "When the point exists";
+        battleSystem.answer2Text.text = "When the point does not exists";
         battleSystem.answer3Text.text = "When the point equals the limit";
     }
 }

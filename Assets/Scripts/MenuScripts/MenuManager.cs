@@ -141,15 +141,15 @@ public class MenuManager : MonoBehaviour
     private void OpenMenu(InputAction.CallbackContext context)
     {
         
-        if (count == 2)
-            count = 0;
-        if (count == 0)
-        {
-            optionSelected = 1;
-            OpenTheMenu();
-            OnMenuOpened();
-        }
-        count++;
+        // if (count == 2)
+        //     count = 0;
+        // if (count == 0)
+        // {
+        //     optionSelected = 1;
+        //     OpenTheMenu();
+        //     OnMenuOpened();
+        // }
+        // count++;
     }
 
     private void OpenTheMenu()

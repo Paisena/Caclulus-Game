@@ -20,7 +20,7 @@ public class BattleSystem : StateMachine
     public Unit player2Unit;
     public Unit player3Unit;
     public Unit enemyUnit;
-
+    public Transform enemyPosition;
     public Slider playerSlider;
     public Slider player2Slider;
     public Slider player3Slider;
@@ -92,10 +92,11 @@ public class BattleSystem : StateMachine
 
         playerUnit = HeroGO.GetComponent<Unit>();
 
-        GameObject enemyGO = Instantiate(playerUnit.enemyFighting, enemyTransform);
-        enemyUnit = playerUnit.enemyFighting.GetComponent<Unit>();
+        GameObject enemyGO = Instantiate(GameObject.FindWithTag("Enemy"), enemyTransform);
+        GameObject.FindWithTag("Enemy").transform.position = enemyPosition.transform.position;
+        enemyUnit = GameObject.FindWithTag("Enemy").GetComponent<Unit>();
 
-
+        enemyGO.transform.position = enemyPosition.transform.position;
         playerHUD.SetHUD(playerUnit, playerSlider);
         enemyHUD.SetHUD(enemyUnit, enemySlider);
         UpdateQuestions();
@@ -345,7 +346,7 @@ public class BattleSystem : StateMachine
         buttonTextArray[4].text = "Fundamental Theorem of Calculus " + GetAmountOfQuestions(5) + "/5";
         buttonTextArray[5].text = "Integration By Parts " + GetAmountOfQuestions(6) + "/5";
         buttonTextArray[6].text = "Area " + GetAmountOfQuestions(7) + "/5";
-        buttonTextArray[7].text = "Heal " + GetAmountOfQuestions(8) + "/5";
+        buttonTextArray[7].text = "Random Questions " + GetAmountOfQuestions(8) + "/5";
     }
 
     public int GetAmountOfQuestions(int concept)

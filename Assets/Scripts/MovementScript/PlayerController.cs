@@ -173,8 +173,9 @@ public class PlayerController : MonoBehaviour
         if (InteractWithEnemy())
         {
             //start combat
+            DontDestroyOnLoad(GameObject.FindWithTag("Enemy"));
             hero.enemyFighting = GameObject.FindWithTag("Enemy");
-            DontDestroyOnLoad(hero.enemyFighting);
+            Debug.Log("added enemy");
             FadeInOutAnimator.SetBool("FadeOut", true);
         }
     }

@@ -14,8 +14,8 @@ public class Question23 : Question
         battleSystem.text.text = "∫f(x) with bounds(a,b) is equal to:";
         battleSystem.SetupAnswers();
         battleSystem.correctAnswer = 1;
-        battleSystem.answer1Text.text = "F(a) - F(b)";
-        battleSystem.answer2Text.text = "f(a) - f(b)";
+        battleSystem.answer1Text.text = "F(b) - F(a)";
+        battleSystem.answer2Text.text = "F(a) - F(b)";
         battleSystem.answer3Text.text = "f(a) + f(b)";
     }
 }

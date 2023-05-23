@@ -10,6 +10,7 @@ public class Question39 : Question
     }
     public override void Start()
     {
+        battleSystem.text.fontSize = 1.8f;
         battleSystem.text.text = "Find the derivative of 12031f(x) * 12031h(x)";
         battleSystem.SetupAnswers();
         battleSystem.correctAnswer = 1;

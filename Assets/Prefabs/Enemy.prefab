@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -1869315837
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300140, guid: c3a40e1c46727b94e959990527f8e7fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ec47f75fe8aff1644ac73998f4ad31b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,9 +101,14 @@ MonoBehaviour:
   unitName: Enemy
   unitLevel: 10
   damage: 20
-  mapHP: 100
-  currentHp: 100
+  baseDamage: 10
+  baseMaxHP: 800
+  mapHP: 800
+  currentHp: 800
+  defense: 0
+  baseDefense: 10
   equipedItems: {fileID: 0}
+  isAlive: 1
 --- !u!114 &161963796117708686
 MonoBehaviour:
   m_ObjectHideFlags: 0
