@@ -1,0 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+
+public class Question26 : Question
+{
+    public Question26(BattleSystem battleSystem) : base(battleSystem)
+    {
+    }
+    public override void Start()
+    {
+        battleSystem.text.text = "Solve ∫4xsin(x)";
+        battleSystem.SetupAnswers();
+        battleSystem.correctAnswer = 2;
+        battleSystem.answer1Text.text = "x<sup>2</sup> + cosx + C";
+        battleSystem.answer2Text.text = "-4xcosx + 4sinx + C";
+        battleSystem.answer3Text.text = "-4xsinx + 4cosx + C";
+    }
+}

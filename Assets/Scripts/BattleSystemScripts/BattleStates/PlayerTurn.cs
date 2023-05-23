@@ -39,6 +39,7 @@ public class PlayerTurn : State
     public override IEnumerator WrongAnswer()
     {
         battleSystem.text.text = "Wrong Answer!";
+        battleSystem.ConceptsActive[battleSystem.selectedQuestion.Item2] = true;
         switch (battleSystem.selectedQuestion.Item1)
         {
             case 1:
@@ -219,10 +220,10 @@ public class PlayerTurn : State
                 battleSystem.SetQuestion(new Question23(battleSystem));
                 break;
             case 3:
-                battleSystem.SetQuestion(new Question23(battleSystem));
+                battleSystem.SetQuestion(new Question24(battleSystem));
                 break;
             case 4:
-                battleSystem.SetQuestion(new Question20(battleSystem));
+                battleSystem.SetQuestion(new Question25(battleSystem));
                 break;
             default:
                 break;
@@ -232,23 +233,80 @@ public class PlayerTurn : State
 
     public override IEnumerator Concept6()
     {
-        Debug.Log("concept 6");
+        int question = PickQuestion(6);
+        switch(question)
+        {
+            case 0:
+                battleSystem.SetQuestion(new Question26(battleSystem));
+                break;
+            case 1:
+                battleSystem.SetQuestion(new Question27(battleSystem));
+                break;
+            case 2:
+                battleSystem.SetQuestion(new Question28(battleSystem));
+                break;
+            case 3:
+                battleSystem.SetQuestion(new Question29(battleSystem));
+                break;
+            case 4:
+                battleSystem.SetQuestion(new Question30(battleSystem));
+                break;
+            default:
+                break;
+        }
         yield break;
     }
     
     public override IEnumerator Concept7()
     {
-        Debug.Log("concept 7");
+        int question = PickQuestion(7);
+        switch(question)
+        {
+            case 0:
+                battleSystem.SetQuestion(new Question31(battleSystem));
+                break;
+            case 1:
+                battleSystem.SetQuestion(new Question32(battleSystem));
+                break;
+            case 2:
+                battleSystem.SetQuestion(new Question33(battleSystem));
+                break;
+            case 3:
+                battleSystem.SetQuestion(new Question34(battleSystem));
+                break;
+            case 4:
+                battleSystem.SetQuestion(new Question35(battleSystem));
+                break;
+            default:
+                break;
+        }
         yield break;
     }
 
     public override IEnumerator Heal()
     {
-        battleSystem.text.text = "healed!";
-
-        yield return new WaitForSeconds(1f);
-
-        battleSystem.SetState(new EnemyTurn(battleSystem));
+        int question = PickQuestion(8);
+        switch(question)
+        {
+            case 0:
+                battleSystem.SetQuestion(new Question36(battleSystem));
+                break;
+            case 1:
+                battleSystem.SetQuestion(new Question37(battleSystem));
+                break;
+            case 2:
+                battleSystem.SetQuestion(new Question38(battleSystem));
+                break;
+            case 3:
+                battleSystem.SetQuestion(new Question39(battleSystem));
+                break;
+            case 4:
+                battleSystem.SetQuestion(new Question40(battleSystem));
+                break;
+            default:
+                break;
+        }
+        yield break;
     }
 
     public int PickQuestion(int concept)

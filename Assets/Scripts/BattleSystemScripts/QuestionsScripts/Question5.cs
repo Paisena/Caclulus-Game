@@ -11,10 +11,10 @@ public class Question5 : Question
 
     public override void Start()
     {
-        battleSystem.text.text = "Find the derivative of (f(x)*h(x))/f(x)";
+        battleSystem.text.text = "Find the derivative of (f(x)*h(x))/x";
         battleSystem.SetupAnswers();
         battleSystem.correctAnswer = 1;
-        battleSystem.answer1Text.text = "((f'(x)*h(x) + f(x)*h'(x))f(x) - f(x)*h(x)*f'(x)) / (f(x))<sup>2</sup>";
+        battleSystem.answer1Text.text = "((f'(x)*h(x) + f(x)*h'(x))x - f(x)*h(x)*f'(x)) / x<sup>2</sup>";
         battleSystem.answer2Text.text = "f(x) + h(x) / f(x)<sup>2</sup>";
         battleSystem.answer3Text.text = "f'(x)*h'(x)/(f(x)))<sup>2</sup>";
     }

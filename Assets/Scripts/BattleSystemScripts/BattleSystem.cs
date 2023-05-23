@@ -343,8 +343,8 @@ public class BattleSystem : StateMachine
         buttonTextArray[2].text = "Limit " + GetAmountOfQuestions(3) + "/5";
         buttonTextArray[3].text = "Separation of Variables " + GetAmountOfQuestions(4) + "/5";
         buttonTextArray[4].text = "Fundamental Theorem of Calculus " + GetAmountOfQuestions(5) + "/5";
-        buttonTextArray[5].text = "Area " + GetAmountOfQuestions(6) + "/5";
-        buttonTextArray[6].text = "Parametric " + GetAmountOfQuestions(7) + "/5";
+        buttonTextArray[5].text = "Integration By Parts " + GetAmountOfQuestions(6) + "/5";
+        buttonTextArray[6].text = "Area " + GetAmountOfQuestions(7) + "/5";
         buttonTextArray[7].text = "Heal " + GetAmountOfQuestions(8) + "/5";
     }
 

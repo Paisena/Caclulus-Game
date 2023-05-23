@@ -12,7 +12,7 @@ public class Question22 : Question
     public override void Start()
     {
         battleSystem.text.fontSize = 1.8f;
-        battleSystem.text.text = "Find the Derivative of ∫Square Root(1+t) with bounds (x<sup>3</sup>,0)";
+        battleSystem.text.text = "Find the Derivative of ∫Square Root(1+t) with bounds (0,x<sup>3</sup>)";
         battleSystem.SetupAnswers();
         battleSystem.correctAnswer = 3;
         battleSystem.answer1Text.text = "Square Root(1 + x<sup>3</sup>)";

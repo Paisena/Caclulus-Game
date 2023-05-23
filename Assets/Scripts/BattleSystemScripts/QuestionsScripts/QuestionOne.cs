@@ -11,7 +11,7 @@ public class QuestionOne : Question
 
     public override void Start()
     {
-        battleSystem.text.text = "Find the Derivative of e<sup>3x</sup> yea";
+        battleSystem.text.text = "Find the Derivative of e<sup>3x</sup>";
         battleSystem.SetupAnswers();
         battleSystem.correctAnswer = 1;
         battleSystem.answer1Text.text = "3e<sup>3x</sup>";
