@@ -40,13 +40,8 @@ internal class Won : State
 
         battleSystem.text.text = "Thanks for playing!";
 
-        yield return new WaitForSeconds(2f);
-
-        battleSystem.text.text = "quitting";
-
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         Application.Quit();
-        battleSystem.levelChanger.ReturnToLastScene();
     }
 }

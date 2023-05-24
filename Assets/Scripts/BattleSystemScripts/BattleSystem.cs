@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using TMPro;
 using System.IO;
 using System;
+using UnityEngine.InputSystem;
+
 
 public class BattleSystem : StateMachine
 {
@@ -73,14 +75,31 @@ public class BattleSystem : StateMachine
     public bool[] concept8List = {true, true, true, true, true};
     public bool[] ConceptsActive = {true, true, true, true, true, true, true, true};
     public (int,int) selectedQuestion = (-1,-1);
+    private InputAction menu;
+    public PlayerMovment controls;
     // Start is called before the first frame update
     void Start()
     {
+        controls = new PlayerMovment();
         StartCoroutine(SetupBattle());
         QuestionImage = QuestionImageBox.GetComponent<Image>();
         buttonArray = new Button[] {button1, button2, button3, button4, button5, button6, button7, button8};
         SetState(new Begin(this));
 
+    }
+
+    private void OnEnable()
+    {
+    }
+
+    private void OnDisable()
+    {
+    }
+
+    private void OpenMenu(InputAction.CallbackContext context)
+    {
+        
+        Application.Quit();
     }
 
     //thing
@@ -327,7 +346,7 @@ public class BattleSystem : StateMachine
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public Sprite CreateSprite(string filePath)
